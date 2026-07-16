@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: finacplus-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: finacplus-app
+  template:
+    metadata:
+      labels:
+        app: finacplus-app
+    spec:
+      containers:
+        - name: finacplus-app
+          image: vijayvl632/finacplus-app:latest
+          ports:
+            - containerPort: 80
